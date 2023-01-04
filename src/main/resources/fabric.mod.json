@@ -1,36 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "ignitioncoil",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "IgnitionCoil",
+  "description": "Spark addon to add more functionality.",
   "authors": [
-    "Me!"
+    "Rongmario"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Rongmario/IgnitionCoil"
   },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "All Rights Reserved",
+  "icon": "assets/morespark/icon.png",
   "environment": "*",
   "entrypoints": {
+    "preLaunch": [
+      "zone.rong.ignitioncoil.IgnitionCoil::early"
+    ],
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "zone.rong.ignitioncoil.IgnitionCoil::late"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
-
   "depends": {
-    "fabricloader": ">=0.14.11",
-    "fabric-api": "*",
-    "minecraft": "~1.19.3",
-    "java": ">=17"
+    "fabricloader": ">=0.4.0",
+    "fabric-lifecycle-events-v1": "*",
+    "spark": ">=1.10.17"
   },
   "suggests": {
     "another-mod": "*"
